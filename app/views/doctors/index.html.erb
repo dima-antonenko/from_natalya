@@ -1,0 +1,22 @@
+
+<h1>Все врачи</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.id %></td>
+        <td><%= link_to  doctor.name, doctor_path(doctor) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Все больницы', '/hospitals' %>

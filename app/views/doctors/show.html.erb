@@ -1,0 +1,20 @@
+<h1><%= @doctor.name %></h1>
+<i>Режим просмотра</i><br/>
+
+<h4>Список больниц, в которых работает этот доктор</h4>
+<table>
+	<tr>
+	  <td>Имя</td>
+	  <td>Действие</td>
+	</tr>
+	<% @doctor.has_hospitals.each do |element| %>
+	<tr>
+	  <td><%= element.name  %></td>
+	  <td><%= link_to "посмотреть", edit_hospital_path(element) %></td>
+	</tr>
+	<% end %>
+</table>
+<hr/>
+
+<%= link_to 'К списку больниц', hospitals_path %>
+<%= link_to 'К списку докторов', hospitals_path %>

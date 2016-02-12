@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Все больницы</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospitals.each do |hospital| %>
+      <tr>
+        <td><%= hospital.id %></td>
+        <td><%=  hospital.name %></td>
+        <td><%= link_to 'Редактировать', edit_hospital_path(hospital) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Все врачи', '/doctors' %>
